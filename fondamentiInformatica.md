@@ -1,6 +1,6 @@
 # Appunti Di Informatica
 ## Fondamenti dell'informatica
-	Lezione 2 (2024/09/20)
+### Lezione 2 (2024/09/20)
 		Tipi di computazione
 			1- Digitale (informatica "autentica)
 				- Discreta (associata ai numeri interi)
