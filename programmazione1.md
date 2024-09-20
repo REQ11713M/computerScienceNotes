@@ -182,3 +182,9 @@ Se io riesco a scrivere un algoritmo per fare le addizioni posso delegare a "qua
 
 
 > "Automatizzare vuol dire guadagnare un sacco di tempo della nostra vita, e siamo tutti felici" -A. Mazzei
+
+
+---
+
+
+### Lezione 02 (2024/09/20)
