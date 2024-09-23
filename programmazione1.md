@@ -1,6 +1,6 @@
 # Appunti Di Informatica
 ## Programmazione 1
-		Lezione 1 (2024/09/19):
+### Lezione 1 (2024/09/19):
 			"Il mio tempo, che sto spendendo perché mi pagano, mica faccio volontariato" -A. Mazzei
 			"Siete venuti qua e ve lo aspettavate, programmazione 1, mica è matematica discreta" -A. Mazzei
 			"Dovete sentire la gioia che si prova quando si programma, e poi certo ci sono i soldi" -A. Mazzei
@@ -64,3 +64,107 @@
 				"Qua ho scritto mio fratello, ma lo pago, per non sfruttarlo proprio a gratis" -A. Mazzei
 				"Ho spoilerato diciamo, mo' non venite perché dite <<boh ho già visto tutto>>" -A. Mazzei
 				Automatizzare vuol dire guadagnare un sacco di tempo della nostra vita, "e siamo tutti felici"
+### Lezione 2 (2024/09/23)
+			Accumulatore per memorizzare la somma parziale
+			Un contatore i per memorizzare il numero di addizioni
+			FLOW-CHART o PSEUDOCODICE: alternative per scrivere codice comprensibile all'essere umano
+			La differenza tra questo corso (prog1) e quello di algoritmi è che qui impariamo la sintassi fondamentalmente e come trasformare da italiano a C, ad algoritmi invece progettiamo algoritmi
+			Che cos'è la macchina di Von Neumann?
+				Sia pc che telefoni che tablet eccetera sono tutte macchine di Von Neumann (approfondimento all'esame di architettura degli elaboratori)
+				La storia dell'informatica:
+					Parte da lontano (algoritmi nel 800 d.C. con al-Khwarizmi)
+					Turing (1936)
+					Architettura di Von Neumann (1945)
+					Personal Computer (1975)
+					La Pascalina (1642), inventata da Blaise Pascal, è la prima addizionatrice meccanica
+					La differenza tra la Pascalina e il calcolatore moderno è che la Pascalina può fare UNA SOLA COSA (fare operazioni), mentre il calcolatore moderno è PROGRAMMABILE
+						(calcolatore vs calcolatrice)
+					Possiamo creare un calcolatore programmabile se è possibile esprimere input e output numericamente
+					La prima macchina programmabile è stata creata da Charles Babbage (1840)
+						Il linguaggio di programmazione utilizzato è simile all'assembly
+						La macchina è Turing-complete, la differenza tra la macchina di Turing e quella di Babbage è che la seconda è analogica
+							Entrambe sono comunque solo macchine teoriche che non sono mai state realizzate
+						Turing introduce il concetto di macchina universale
+							Nasce così uno dei pilastri dell'informatica: la teoria della calcolabilità
+							Turing ha creato il primo algoritmo degli scacchi (Turochamp)
+							Esistono problemi che non possono essere risolti da un algoritmo generale
+							Ci sono operazioni che vengono scelte in base allo stato interno della macchina
+					Prima macchina di Von Neumann costruita (EDVAC):
+						1944 da J. Mauchly e J. Presper Eckert
+						Rappresentazione binaria dei dati
+							BInary digiT --> BIT (anche: Binary Information Token).
+								Elemento di base dell'informazione
+							Vero/falso, sì/no, acceso/spento, etc...
+								Può essere implementato con vari dispositivi hardware di semplice realizzazione fisica (relè, valvole, transistor)
+								Da qui la sua adozione nei calcolatori moderni rispetto alla rappresentazione decimale usata dai primi calcolatori
+									Molto conveniente perché si possono utilizzare vari fenomeni fisici "vero/falso" (direzione campo magnetico, etc...)
+								b: bit, B: byte
+						6000 valvole e 12000 diodi, è composta da:
+							memoria primaria (ram): 1024 parole di 44 bit
+							mememoria secondaria a nastro magnetico per lettura/scrittura
+							unità di controllo con un oscilloscopio
+							ALU (arithmetic logic unit) che esegue le operazione su due operandi
+						Un programma viene eseguito nella memoria primaria, perché è notevolmente più veloce
+						Cambiando dei bit nella memoria primaria, riprogrammi il computer. Se prima fa le divisioni, ora può togliere gli occhi rossi dalle foto, etc...
+						Per indicare quale cella ti interessa nella RAM devi fornire il suo indirizzo binario
+						La CPU legge ed esegue ciò che c'è nella memoria primaria
+						Lo stato della macchina è effettivamente dato dalla memoria primaria
+						La memoria primaria contiene dentro di sè sia l'algoritmo che l'input. Sono nello stesso spazio fisico.
+					Quando noi programmiamo stiamo scrivendo nella memoria primaria, che è il nostro "spazio"
+			Linguaggi ad alto e basso livello:
+				Indica la vicinanza al linguaggio della macchina (basso --> più vicino, alto --> più lontano)
+				Differenza tra C e Assembly:
+					Linguaggio ad alto livello:
+						Mi astraggo dai dettagli della macchina e programmo una macchina di Von Neumann generale
+					Funzionamento di una CPU:
+						Implementa semplici istruzioni aritmetiche sui registri
+						Può copiare dati fra memoria e registri
+						Può eseguire istruzioni in ordine anche non consecutivo
+						Istruzioni di salto incondizionato
+						Istruzioni di salto condizionato
+						Control Unit: preleva dalla memoria e deocidifica una istruzione alla volta
+						Istruzioni codificate su 16 bit l'una
+							0010 00 0110010000 = Carica / nel registro R0 / il contenuto del 401esimo byte
+						Programma: codifica di un algoritmo in un linguaggio di programmazione (in quale lingua voglio parlare)
+						Linguaggio di programmazione:
+							Framework ("ambiente") per scrivere ed eseguire algoritmi (o programmi, scritti in quella specifica lingua)
+							Insieme di parole e di regole definite in modo formale per consentire la programmazione di un calcolatore affinché esegua compiti predeterminati
+							L'EDVAC era programmato in linguaggio macchina
+							Il linguaggio assembly viene sviluppato alla fine degli '40 per sollevare il programmatore dai task più error-prone
+							L'insieme di istruzioni assembly viene detto sorgente assembly
+							I primi programmatori programmavano proprio in 0 e 1, successivamente è stato creato l'assembly (che però non è portabile, ciascuna macchina ha il suo)
+							Esempio: addizione fra interi in assembly
+								ADDR A = 400
+								ADDR B = 402
+								LOAD, R0, A
+								LOAD, R1, B
+								ADD, R0, R1
+								STORE, R0, A
+							Esempio: moltiplicazione di interi in assembly
+								LOAD, R0, 0
+								LOAD, R1, 0
+								LOAD, R2, m
+								LOAD, R3, n
+								CMP, R1, R3
+								JMPEQ <riga 10>
+								ADD, R0, R2
+								ADD, R1, 1
+								JMP <riga 5>
+								STORE, R0, m
+							La codifica in linugaggio assembly è efficiente ma è un processo di codifica lungo e facile all'errore
+								4 righe di codice per addizione, 10 per la moltiplicazione
+							Richiede la consocenza dell'architettura della CPU, poiché il codice scritto per una CPU deve essere riscritto da capo per funzionare su un'altra CPU se implementano istruzioni differenti
+							A partire dagli anni '50 vennero sviluppato linguaggi di programmazione con istruzioni dalla semantica più vicino al linugaggio umano e che permettessero di astrarre il programma dalle caratteristiche dell'hardware
+							"Scialla Fra! Ma forse non si usa più scialla. Cosa si usa adesso? Chill? <<Chill bro>>, dal prossimo anno scrivo <<Chill bro>> sulle slide" - A. Mazzei
+							Vogliamo un interprete, qualcuno con cui possiamo dialogare con una logica più vicina agli esseri umani
+							Il linguaggio FORTRAN (FORmula TRANslator):
+								All'inizio degli anni '50 IBM progetta il modello 704 per calcoli scinetifici in virgola mobile con una certa quantià di requisiti
+									Per esempio, gli scienziati non devono aver bisogno di conoscere nello specifico la maccina su cui programmano ma devono concentrarsi sulla risoluzione dei problemi
+								Versioni moderni offrono costruitti if, while, etc...
+								Un compilatore traduce ogni istruzione FORTRAN in una o più istruzione assembly specifiche per la macchina utilizzata
+								Se cambia la macchina utilizzata, è sufficiente ricompilare il programma per l'hardware relativo
+								Insieme a LISP, ALGOL, COBOL rappresenta il capostipite dei linguaggi di terza generazione, famiglia a cui appartiene il linguaggio C originario
+							Le variabile sono "spazi" in cui voglio mettere dei valori, ma sono spazi generici
+								Bisogna astrarsi dalla macchina
+							Utilizziamo C perché è ancora uno dei più utilizzati al mondo
+							--> Il Python si scrive alla cazzo di cane, quindi non lo usiamo. Il motivo per cui è molto utilizzato è perché è pieno di librerie: cose già fatte
