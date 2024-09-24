@@ -113,8 +113,95 @@
 
 ---
 
-Per provare a convertire con l'ASCII e altra roba che non ho seguito
+Per provare a convertire con l'ASCII, binario, decimale e così via (utile per gli esercizi)
 
-https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html
+https://www.rapidtables.com/convert/number/
 
 ---
+
+		Come si rappresentano le immagini?
+		
+			Mappatura dei bit --> si può rappresentare una immagine
+			"Il passaggio a una immagine a colori non è molto complicato" (ci sono volute solo un po' di decine di anni lol)
+			Con 8bit possiamo scrivere 256 colori
+			*immagini di gufi a bassa risoluzione*
+				Normalmente le immmagini vengono memorizzate in questo modo, cioè con le bitmap o raster
+			Un altro metodo sono le immagini vettoriali
+				Le immagini vettoriali sono composte da funzioni che descrivono le forme
+			Paolini ha appena guardato malissimo due tizi che sono entrati dieci minuti in ritardo lol
+			Non è stabilito quale tra raster e vettoriale occupi meno spazio
+			"Sì qua ho fatto dei... pasticci" -L. Paolini
+		Come si rappresenta il suono?
+		
+			Il suono è rappresentano da un'onda
+			Se prendiamo dei timing sufficientemente ravvicinati non ci accorgiamo di questi timing
+			Alcuni formati audio:
+				- .wav
+				- .mid
+				
+		Formati video
+			Diapositive: se prendete delle foto e le fate passare abbastanza velocemente vedete un susseguirsi delle immagini, non le vedete passare singolarmente
+			Il video funziona nello stesso modo. Però ha detto una cavolata, che milione in qualche secondo. Solitamente per i film e le animazioni si usano 24fps
+				Con un milione di fotogrammi per un'animazione a 24fps così ottieniamo oltre 11 ore di video lol.
+		
+		Rappresentazione dei numeri nei vari sistemi o qualcosa del genere non ho ben capito cosa vuole fare (forse è un titolo troppo lungo per un paragrafo)
+			375 (decimale) è composto da centinaia, decine e unità.
+				3 * 10^2 + 7 * 10^1 + 5 * 10^0
+			1011 (binario)
+				1 * 2^3 + 0 * 2^2 + 1 * 2^1 + 2 * 2^0 = 11
+				Annotazione: mostrare un metodo di calcolo senza spiegare perché funziona è una tecnica di insegnamento inefficace
+				SETTIMANA PROSSIMA NON C'È PAOLINI ho provato un certo piacere fisico
+				"Se non muoio probabilmente il problema non è poi così importante" L. Paolini
+				
+			Come convertire da decimale a binario:
+				Dividere per due e calcolare il resto
+				es. 21
+					21 / 2 = 10 + 1
+					10 / 2 = 5 + 0
+					5 / 2 = 2 + 1
+					2 / 2 = 1 + 0
+					1 / 2 = 0 + 1
+					Il risultato va letto dal basso verso l'alto ed è 10101
+					
+					22
+					22 / 2 = 11 + 0
+					11 / 2 = 5 + 1
+					5 / 2 = 2 + 1
+					2 / 2 = 1 + 0
+					1 / 2 = 0 + 1
+					Il risultato è 10110
+					
+			Somma tra numeri binari:
+				Fondamentalmente immaginate di dover fare un'operazione di AND a tre bit (che è un ottimo metodo per fare un sommatore di numeri binari e funziona anche con la redstone)
+				
+				0000000 +    <-- operatore di riporto
+				0101101 +    <-- primo operatore
+				0010110 =    <-- secondo operatore
+				-------
+				1000011      <-- risultato
+				
+				L'operatore di riporto è un operatore immaginario/mentale che è utile per ricordarsi il riporto per chi è alle prime armi con le addizioni in binario.
+				È importante ricordare che 1 + 1 = 10
+				
+			Convertire da binario con virgola a decimale con virgola
+				101.01
+				101 non è un problema (vedi: Come convertire da decimale a binario)
+				.01 --> + 0 * 2^-1 + 1 * 2^-2
+				101.01 = 5 + 1/4 = 5.25
+				
+			Convertire da decimale con virgola a binario con virgola
+				9.275
+				Prima di tutto si trasforma il 9: 1001
+				Per il 275 si moltiplica
+				0.275 * 2 = 0.550
+				0.550 * 2 = 1.10
+				0.10 * 2 = 0.20
+				0.20 * 2 = 0.40
+				0.80 * 2 = 1.60
+				0.60 * 2 = 1.20
+				0.20 * 2 = 0.40
+				0.40 * 2 = 0.80
+				...
+				(viene un numero periodico)
+				Per la parte decimale si leggono i numeri dall'alto verso il basso
+				--> 1001.01001100(1100110011001100110011...)
