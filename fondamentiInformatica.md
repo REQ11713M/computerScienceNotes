@@ -72,3 +72,49 @@
 			È comodo scrivere i numeri binari in esadecimale
 				In alcuni linguaggi si scrive 0x davanti al numero esadecimale
 					e.g. 1101 --> 0xD
+
+### Lezione 3 (2024/09/24)
+		"Qualcuno non è interessato, lo invito ad andare a chiacchierare altrove. Purtroppo il dipartiento è spostato dal centro, provedderemo a spostarlo così potete andare in bar più carini" -L. Paolini
+		"Circuiti come fliflòp" L. Paolini
+		Macchine a 64 bit --> possiamo avere 2^64 (1.8*10^19) indirizzi di memoria
+		Salvare vuol dire memorizzare in qualche dove anche in assenza di alimentazione l'informazione viene mantenuta
+		"Non c'è nessun problema a riprenderlo" grandissima cit falsa di Paolini, probably
+		"Se apro le mail adesso ho decine di mail. Dalle offerte di viagra a tutto il resto... Sarà l'età" -L. Paolini
+		I primi (?) metodi di archiviazione dell'informazione sono stati i dischi magnetici
+			Organizzati in dischi uno sopra l'altro
+			Per chiedere al disco di avere un byte bisognava indicargli tre informazioni:
+				- Il cilindro: il fascio di tracce
+				- Head (testina): sopra sotto
+				- Settore
+			Funzionano magnetizzando con poli diversi i "bit" del disco
+		Altri dispositivi di memoria di massa sono i cd, i dvd e i blu-ray
+			Per i dischi non riscrivibili vengono bruciate delle parti riflettenti in modo che non riflettano più
+				"Una luce così forte da bruciare lo specchio, come quando io mi guardo la mattina allo specchio"
+			Nel caso dei blu-ray la capacità di memoria è maggiore grazie al fatto che possono essere letti sia da sopra che da sotto e sono composti da layer
+			Le informazioni sono scritte a spirale, quindi il lettore non può saltare da una parte all'altra (non sono infatti divisibili in settori concentrici)
+		Flash Drives
+			I bit sono memorizzati in celle di ossido di silicone. Vengono depositati degli elettroni. Se non ci sono, l'informazione è 0
+			Hanno il vantaggio che queste celle di ossido di silicone mantengono intrappolati gli elettroni per qualche anno
+		SSD (Dischi allo Stato Solido)
+			Sono privi di motore --> consumano meno e non fanno rumore
+				"I vecchi computer facevano un rumore abbastanza... rrrrrr... non banale"
+			Essendo privi di puntina, se cadono non c'è rischio che la puntina vada a rovinare il disco
+		SD (Secure Digital) memory cards (SD cards), SDHC (High Capacity), SDXC (Extended Capacity)
+			Anche queste funzionano con l'ossido di silicone
+		Tutta l'informazione che noi memorizziamo nei computer digitali è composta da soli numeri
+		"La prima proposta p stata quella del codice ASCII (AS-kee), a volte ASCII (ashi)... NON HASHISH"
+		ASCII
+			A ogni sequenza di 0 e 1 corrisponde un numero, una lettera, un simbolo o una "azione"
+			"Ovviamente li dovete sapere tutti a memoria... Ovviamente scherzo" -L. Paolini (aggiungo: molto divertente. Aggiungo: ironia)
+			Il fatto che ci fosse un bit in più a disposizione ha portato varie espansioni
+			Molti dei computer, soprattutto quelli Windows, utilizzano UNICODE. Utilizza fino a 21 e l'obiettivo è che abbia caratteri sufficienti per scrivere in qualsiasi lingua e qualsiasi simbolo l'umanità abbia mai inventato
+			"Parentesi angolououse" -L. Paolini
+			L'informazione è sempre scritta in un file di testo, anche se si deve usare un certo font o se il testo è in grassetto e così via.
+
+---
+
+Per provare a convertire con l'ASCII e altra roba che non ho seguito
+
+https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html
+
+---
