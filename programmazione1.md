@@ -168,3 +168,13 @@
 								Bisogna astrarsi dalla macchina
 							Utilizziamo C perché è ancora uno dei più utilizzati al mondo
 							--> Il Python si scrive alla cazzo di cane, quindi non lo usiamo. Il motivo per cui è molto utilizzato è perché è pieno di librerie: cose già fatte
+### Laboratorio, lezione 1 (2024/09/25)
+		"Il pinguino felice, perché ha appena mangiato un pesce ed è felice"
+		"Linus è stato morsooooooo da un pinguinoooo"
+		"Perché il simbolo di Windows è una finestra? Perché windows in inglese vuol dire finestra, e quindi è una finestra"
+		Alcuni comandi sono integrati e caratterizzano l'uso standard del terminali
+		Altri comandi (come il compilatore gcc per Windows) sono invece esterni
+		C:\Users\amazzei>echo %PATH%
+			ci mostra la directory in cui siamo
+		"bin" sta per binary, non cestino lol. È il codice pronto per essere eseguito
+		(Sì, questi appunti sono stati inutili ma perché non ha detto niente insomma. È tutto nelle slide lol)
