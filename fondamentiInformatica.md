@@ -207,3 +207,136 @@ https://www.rapidtables.com/convert/number/
 				(viene un numero periodico)
 				Per la parte decimale si leggono i numeri dall'alto verso il basso
 				--> 1001.01001100(1100110011001100110011...)
+### Lezione 4 (2024/09/25)
+		"Chi ha voglia di chiacchierare per cortesia vada altrove" grazie di ignorare i 10 minuti di pausa e pensare che in un minuto tutti riprendano la concentrazione
+			Ripetuto tre volte, pergiunta
+		Sul sito MOODLE sta iniziando a pubblicare cose --> fare esercizi eccetera direi
+		"È abbastanza fastidioso avere persone che vanno avanti e indietro durante le lezioni" è appena finita la pausa bro eddai
+		Nella scorsa lezione abbiamo visto come fare le conversioni da binario a decimale e viceversa e così via
+			Sta proponendo così spesso il tool che secondo me l'ha creato lui e ci guadagna
+			"Fortunatamente non mi sono sbagliato... Cioè non ho fatto la mia brutta figura"
+				My man sbagliare è normale, dont you worry <3
+			Sta facendo un ulteriore esempio, boh lo scrivo che è meglio che stare su Steam I guess
+				9.35
+					9/2=4+1
+					4/2=2+0
+					2/2=1+0
+					1/2=0+1
+						1001b = 9d
+					0.35*2=0.7
+					0.7*2=1.4
+					0.4*2=0.8
+					0.8*2=1.6
+					0.6*2=1.2
+					0.2*2=0.4
+					-->0.8-->1.6-->1.2-->0.4
+						.0101100(11001100110011...)b = .35d
+					--> 1001.0101100(110011001100...)b = 9.35d
+					nb: b accanto a un numero è usato per indicare un numero binario, d per indicare un numero decimale
+				Ma perché ora sta parlando di programmazione? Mazzei sei tu?
+					--> ha detto che double x = 9 / 2 in C non assegna 4.5 a x perché è un'operazione tra due interi
+						Si può effettuare un casting per ottenere 4.5 nel seguente modo: double x = (double)9 / (double)2
+		Nuovi argomenti:
+		Numeri binari con segno (two's complement notation o notazione complemento a due)
+		
+			    10011011 +
+			    11111111
+			    --------
+			   110011010
+			   
+			Problema con sopra: otteniamo un overflow, cioè il risultato occupa più bit degli addendi
+			Il complemento a due sfrutta l'overflow
+			Il complemento è un'operazione in cui invertiamo ciascun bit
+				esempio:
+					Il complemento 10101111 è 01010000
+				Il complemento a due di un numero è quel numero che, sommato al primo numero, ci fa ottenere 000
+				Cerco di parafrasare Paolini:
+					-  Stabiliamo un numero binario, detto "A".
+					-  Il complemento di A è A' ("A primo").
+					-  Il complemento a due di A è A'+1.
+					-  A + A' + 1 = 0
+				Il libro suggerisce un'ulteriore tecnica, ma non ho fatto in tempo a segnarla.
+				Alcuni dei più grandi buchi nella sicurezza della storia sono stati provocati da errori di overflow
+				Il bit più significativo dei numeri negativi è il -1
+				Lo 0 è incluso nei positivi, quindi i negativi vanno da -1 a -4 e i positivi vanno da 0 a 3
+				Il complemento a due di un numero senza sapere quanti bit ci sono è impossibile da fare
+				Il libro parla di una "excess notation" MA NON È NOTAZIONE A 3
+					Esiste "eccesso a 3" ma non è la stessa cosa
+					Le notazioni in eccesso sono notazioni alternative per la rappresentazione dei numeri
+						Trasformare 5d in eccesso 8:
+							5d + 8 = 13d
+							Convertire su 4 bit
+							13/2=6+1
+							6/2=3+0
+							3/2=1+1
+							1/2=0+1
+								1101
+						Trasformare -3d in eccesso 8:
+							-3d + 8 = 5d
+							5/2=2+1
+							2/2=1+0
+							1/2=0+1
+								0101 (lo 0 più significativo dobbiamo aggiungerlo noi)
+						Tabella che rappresenta i valori in eccesso 8:
+						- nb(è possibile verificare che 5 e -3 convertiti col metodo spiegato sopra rispettano i valori della tabella sottostante)
+							--------------------------
+							    Bit		 |	  Value
+							  Pattern	 | Represented
+							---------------------------
+								1111	 |		+7
+							---------------------------
+								1110	 |		+6
+							---------------------------
+								1101	 |		+5
+							---------------------------
+								1100	 |		+4
+							---------------------------
+								1011	 |		+3
+							---------------------------
+								1010	 |		+2
+							---------------------------
+								1001	 |		+1
+							---------------------------
+								1000	 |		+0
+							---------------------------
+								0111	 |		-1
+							---------------------------
+								0110	 |		-2
+							---------------------------
+								0101	 |		-3
+							---------------------------
+								0100	 |		-4
+							---------------------------
+								0011	 |		-5
+							---------------------------
+								0010	 |		-6
+							---------------------------
+								0001	 |		-7
+							---------------------------
+								0000	 |		-8
+							---------------------------
+			
+			Virgola mobile:
+				"Chi di voi ha un milione di euro sul conto? Eh, beati voi" -L. Paolini
+				"Quanti di voi con un milione di euro controllano i centesimi sul conto? (Io! Io sempre!) Eh va beh, genovesi?" -L. Paolini
+				L'idea è di spostare la virgola per ottenere la precisione necessaria.
+					Per esempio, se abbiamo un numero grandissimo non ci interessa la parte decimale. Se invece non abbiamo una parte intera, spostiamo la virgola per ottenere un numero più preciso
+				Su 8 bit abbiamo:
+					- Un segno (1 bit)
+					- Un esponente (3 bit)
+					- Una mantissa (4 bit)
+				Non nel libro: ha menzionato dei dettagli di ottimizzazione
+					- Solitamente per il floating point chiedono in eccesso 4. In eccesso 8 l'hanno chiesto ma non per il floating point.
+					- Sfrutta un trucchetto sui valori subito prima e dopo la virgola per ottimizzare ulteriornmente lo spazio occupato dal numero
+---
+
+Convertitore (più complesso però) che mostra la conversione in floating point con segno, esponente e mantissa messi in evidenza					
+https://www.h-schmidt.net/FloatConverter/IEEE754.html
+
+---
+				Noi normalmente tronchiamo i nostri numeri al numero di bit disponibili.
+					Così facendo si perde una piccola parte di informazione
+				Ci sono esercizi nella prima parte del libro
+				Notare che nel capitolo 5 del libro (seconda parte) parla di number theory
+				A fine capitolo 5 ci sono anche esercizi con domande ed esercizi numerici con le soluzioni
+					Le soluzioni degli esercizi in blu sono spiegati molto bene, per quelli in nero ci sono solo le soluzioni
