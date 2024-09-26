@@ -4,7 +4,7 @@
 		In realtà non abbiamo detto praticamente niente
 ### Lezione 2 (2024/09/20)
 		Tipi di computazione
-			1- Digitale (informatica "autentica)
+			1- Digitale (informatica "autentica")
 				- Discreta (associata ai numeri interi)
 			2- Analogico
 				- Continua (associata ai numeri reali)
