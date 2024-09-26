@@ -243,7 +243,7 @@
     				Tipi:
 				- char 		1 byte				%c
 				- int 		4 byte (d.s.)		%d
-				- short 	2 byte (d.s.)		%d
+				- short 	2 byte (d.s.)		%hd
 				- long 		8 byte (d.s.)		%ld
 				- float 	4 byte (d.s.)		%f
 				- double 	8 byte (d.s.) 		%lf
