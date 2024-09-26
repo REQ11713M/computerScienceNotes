@@ -229,18 +229,18 @@
  ---
  
 
-		"Sono tempi dolci per noi programmatori" -A. Mazzei
-		"Se voi non indentate lo fate per cattiveria. Eh così Mazzei ci mette più tempo, ma Mazzei decide anche il vostro voto" -A. Mazzei
-		"Microsoft non credeva in internet" -A. Mazzei
-		"Questo è il simbolo di uno gnu... che mi pare sia... africano? Credo di sì" -A. Mazzei
-		"Oh è Microsoft che mi rompe le cose... Non è vero di Unix, io c'ho Windows- Ecco vedete che funziona di nuovo? Ora esplode" -A. Mazzei
-		Tipi di dati:
-			Un tipo di dato è caratterizzato:
-				Dalla rappresentazione in memoria dei dati di quel aprticolare tipo
-				Dall'insieme di operazione ammissibili su dati di quel tipo
-			A cosa servono i tipi di dati:
-				Permettono di effettuare controllo statici sulla correttezza sintattica del programma e quindi prevenire errori
-    			Tipi:
+			"Sono tempi dolci per noi programmatori" -A. Mazzei
+			"Se voi non indentate lo fate per cattiveria. Eh così Mazzei ci mette più tempo, ma Mazzei decide anche il vostro voto" -A. Mazzei
+			"Microsoft non credeva in internet" -A. Mazzei
+			"Questo è il simbolo di uno gnu... che mi pare sia... africano? Credo di sì" -A. Mazzei
+			"Oh è Microsoft che mi rompe le cose... Non è vero di Unix, io c'ho Windows- Ecco vedete che funziona di nuovo? Ora esplode" -A. Mazzei
+			Tipi di dati:
+				Un tipo di dato è caratterizzato:
+					Dalla rappresentazione in memoria dei dati di quel aprticolare tipo
+					Dall'insieme di operazione ammissibili su dati di quel tipo
+				A cosa servono i tipi di dati:
+					Permettono di effettuare controllo statici sulla correttezza sintattica del programma e quindi prevenire errori
+    				Tipi:
 				- char 		1 byte				%c
 				- int 		4 byte (d.s.)		%d
 				- short 	2 byte (d.s.)		%d
