@@ -178,3 +178,70 @@
 			ci mostra la directory in cui siamo
 		"bin" sta per binary, non cestino lol. È il codice pronto per essere eseguito
 		(Sì, questi appunti sono stati inutili ma perché non ha detto niente insomma. È tutto nelle slide lol)
+### Lezione 3 (2024/09/26)
+		Esistono linguaggi di alto livello e basso livello
+		Il linguaggio C
+			Nel 1969 Ken Thompson inizia a scrivere un sistema operativo
+			Inizialmente sviluppato per uso interno sui computer pdp-7 e pdp-11
+			Veros la fine degli 80 è standardizzato da ANSI e ISO per uso su una varietà di hardaware differente
+			Lo standard ha subito numerosi aggiornamenti (C-99, C-11)
+			Il libro di testo fa riferimento a C-11
+				Il libro di Kernighan e Ritchie "The C programming language" è pensato per insegnare il C, non per insegnare a programmare
+			Il linguaggio C è un linguaggio di programmazione:
+				- Compilato:
+					--> Un compilatore traduce i sorgenti C nel linguaggio macchina del caso
+				- Imperativo:
+					--> Il programma è un insieme di istruzione pensate come ordini per il compilatore
+				- Strutturato:
+					--> Il codice sorgetne è organizzato in blocchi racchiusi da delimitatori
+				- Fortemente tipizzato:
+					--> Il programmatore deve specificare il tipo di ogni variabile
+				Il codice sorgente si avvicina alla logica degli esseri umani ma non è un linguaggio umano
+					"Mica possiamo parlare di calcio con la macchina di Von Neumann" -A. Mazzei
+					"La programmazione imperativa si avvicina alle ricette di cucina. A me hanno criticato i troppi esempi di cucina" -A. Mazzei
+					"Se devo fare una torta divido la base dalla farcitura, e ciascuna di queste posso dividerle in ulteriori fasi" -A. Mazzei
+					C'è una struttura nella soluzione
+						Dividiamo i problemi in problemi più piccoli e più piccoli e così via.
+							nb: si chiama "Divide et impera", nel caso in cui qualcuno volesse approfondire la cosa cercando su google
+						"Be- OPS stavo per morire" -A. Mazzei
+					L'esecuzione è fatta dalla macchina di Von Neumann direttamente con un codice in linguaggio macchina
+					"IK-s (x)" -A. Mazzei
+					"In passato il Pascal..." bro abbiamo capito che hai imparato a programmare con Pascal lol
+			Primo programma in C:
+				Capitolo 2 del libro di testo
+---
+// fig02_01.c
+
+// A first program in c.
+
+#include <stdio.h>
+
+// function main begins program execution
+
+int main(void){
+
+	printf("Welcome to C!\n");
+	
+} // end function main
+---
+
+			"Sono tempi dolci per noi programmatori" -A. Mazzei
+			"Se voi non indentate lo fate per cattiveria. Eh così Mazzei ci mette più tempo, ma Mazzei decide anche il vostro voto" -A. Mazzei
+			"Microsoft non credeva in internet" -A. Mazzei
+			"Questo è il simbolo di uno gnu... che mi pare sia... africano? Credo di sì" -A. Mazzei
+			"Oh è Microsoft che mi rompe le cose... Non è vero di Unix, io c'ho Windows- Ecco vedete che funziona di nuovo? Ora esplode" -A. Mazzei
+			Tipi di dati
+				Un tipo di dato è caratterizzato:
+					Dalla rappresentazione in memoria dei dati di quel aprticolare tipo
+					Dall'insieme di operazione ammissibili su dati di quel tipo
+				A cosa servono i tipi di dati:
+					Permettono di effettuare controllo statici sulla correttezza sintattica del programma e quindi prevenire errori
+				Tipi:
+					- char 		1 byte				%c
+					- int 		4 byte (d.s.)		%d
+					- short 	2 byte (d.s.)		%d
+					- long 		8 byte (d.s.)		%ld
+					- float 	4 byte (d.s.)		%f
+					- double 	8 byte (d.s.) 		%lf
+					
+					--> d.s. = di solito
