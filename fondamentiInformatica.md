@@ -340,3 +340,33 @@ https://www.h-schmidt.net/FloatConverter/IEEE754.html
 				Notare che nel capitolo 5 del libro (seconda parte) parla di number theory
 				A fine capitolo 5 ci sono anche esercizi con domande ed esercizi numerici con le soluzioni
 					Le soluzioni degli esercizi in blu sono spiegati molto bene, per quelli in nero ci sono solo le soluzioni
+### Lezione 4 (2024/09/27)
+	Data Compression
+		Comprimere dei dati non vuol dire che li "schiacciamo", ma usiamo tecniche particolari che sono emerse in una quantità non indifferente di tempo
+		In particolare abbiamo due tipi di compressione:
+			Lossless:
+				Una compressione che evita la perdita di dati. Per esempio, una tesi di laurea sarebbe da comprimere in modo lossless, per evitare di perdere informazioni
+			Lossy:
+				Una compreessione che può portare a una perdita di dati. È adatta per foto, audio e video, e in generale a file la cui perdita parziale di dati non è un problema
+			Come funziona?
+				Run-length encoding (lossless):
+					Se dei dati consistono in lunghe sequenze dello stesso valore, possiamo utilizzare questo metoodo.
+						es.
+						AAAABBBBBBCCC --> 4A6B3C
+						(spiegazione schematica non proprio reale ma che rende l'idea)
+				Frequency-dependent encoding (lossless):
+					Se abbiamo dei dati, alcuni dati si presenteranno più frequentemente. Quindi rappresentiamo i dati più frequenti con un numero minore di bit per risparmiare spazio
+					Questa tecnica è associata a una sorta di dizionario.
+					--> Huffman codes
+				Relative encoding/Differential encoding (lossless e lossy - dipende se le differenze sono codificate precisamente o approssimate):
+					Se i dati sono compresse in unità, le quali differiscono solo leggermente dalle precedenti
+				Dictionary encoding:
+					Si assegnano dei codici a delle "parole". Questa corrispondenza è decisa in principio scrivendo appunto un dizionario.
+					Vengono poi sostituite le "parole" che appaiono nei dati con i codici corrispondenti del dizionario.
+				Adapative dictionary encoding:
+					Non si devono usare solo corrispondenze prestabilite ma il dizionario può adattarsi "dinamicamente" al flusso di dati.
+				Lempel-Ziv-Welsh (LZW) encoding:
+					Boh?
+				GIF (lossy):
+					Si riduce la quantità di colori, perché alcuni non sono utilizzati
+				"Come Renzo e Lucia ne La Divina Commedia" -L. Paolini
