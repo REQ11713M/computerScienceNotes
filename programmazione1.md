@@ -249,3 +249,93 @@
 				- double 	8 byte (d.s.) 		%lf
 					
 				--> d.s. = di solito
+### Lezione 4 (2024/09/30)
+	Stiamo introducendo C nella sua sintassi di base
+	Utilizziamo delle keywords che rappresentano operazioni, tipi, espressioni, identificatori, enunciati, etc...
+	Tipi:
+		Un tipo di dato è caratterizzato da:
+			- Rappresentazione in memoria dei dati di quel particolare tipo
+			- Insieme di operazioni ammissibili su dati di quel tipo
+		A cosa servono i tipi di dati
+			Permettono di effettuare controlli statici sulla correttezza sintattica del programma e quindi prevenire errori di programmazione
+		Ogni tipo di variabile ha uno specificatore, indicato da %
+		Ogni tipo ha anche una lunghezza di bit che occupa
+			printf("%d", sizeof(int)) per esempio ottiene le dimensioni, nella nostra macchina di Von Neumann le dimensioni potrebbero essere diverse da quelle di un'altra
+	Keywords:
+		Ce ne sono moltissime
+			.........................................................................................................
+			|	auto		|	do*	|	goto	|	signed		|	unsigned	|
+			|	break		|	double	|	if	|	sizeof*		|	void*		|
+			|	case		|	else*	|	int	|	static		|	volatile	|
+			|	char*		|	enum	|	long	|	struct		|	while*		|
+			|	const*		|	estern	|	register|	switch		|			|
+			|	continue 	|	float* 	|	return 	|	type		|			|
+			|	default		|	for*	|	short	|	union		|			|
+			'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+			
+	Operatori:
+		+	-	*	/
+		%	++	--	!
+		||	&&	==	!=
+		>	<	>=	<=
+	Espressione:
+		Modo di scrivere un valore che si ottiene mediante un processo di valutazione di costanti, variabili e funzioni usando degli operatori
+		Hanno un tipo e un valore
+	Identificatore:
+		Un nome composto da caratteri alfanumerici che segue delle regole, è per identificare una variabile o una funzione
+	Istruzione:
+		Un comando finito, un'unità statica
+		Le istruzioni sono terminate dal carattere ;
+		Le istruzioni possono continuare su più righe per leggibilità. Si può andare a capo in ogni punto dove si può, mettere uno spazio
+		Una sequenza composta da uno o più spazi e/o caratteri di tabulazione TAB e/o ritorni a capo e/o commenti è trattata come un unico spazio (tranne che all'interno delle stringhe)
+	Assegnamento:
+		Per Mazzei è una delle cose più importanti della programmazione. L'assegnamento permette di cambiare/manipolare lo stato della memoria
+	Variabili in C:
+		Introduzione:
+			Ogni variabile è caratterizzata da nome, tipo, valore, indirizzo
+		Dichiarazione di una variabile:
+			int x;
+			tipo nome;
+			Alla dichirazione viene risevata in memoria un'area di memoria dipendente dal tipo
+			Da quel punto in poi quell'area di memoira sarà accessibile attraverso il nome
+			Il nome deve essere un identificatore unico nello scope della variabile
+		Un primo modello di memoria:
+			I linguaggi di alto livello come C mascherano la complessità di gestione della memoria grazione all'uso di variabili
+			Per utilizzare in modo consapevole il linguaggio C serve tuttavia comprednere come al memoria è gestita (allocata e disallocata)
+			Studiereo l'evoluzione della memoria usata da un programma grazie ad un semplice modello
+			Al caricamento (loading) del programma dalla memoria secondaria viene allocata un'area di memoria per codice e dati del programma
+			In una RAM (Random Access Memory, è una memoria ad accesso non sequenziale) tutte le celle hanno lo stesso tempo di accesso
+			La dimensione dell'area codice è fissa
+			L'area dati ha dimensione massima predefinita (stack overflow)
+			Le variabili sono allocate nell'area riservata ai dati una dopo l'altra in ordine di dichiarazione
+			Stack overflow vuol dire che non c'è più spazio nell'area dei dati
+			Frame Pointer (FP) è l'indirizzo base da cui iniziare ad allocare le variabili della funzione main
+			Lo Stack Pointer (SP) indica l'indirizzo a cui allocare la prossima variabile
+			Al carimento, FP e SP coincidono
+			Dopo la dichiarazione di x, SP è decrementato di 4 bytes
+			L'allocazione di una variabile di tipo int significa consumare 4 byte dall'area dati disponibile
+			Dichiarare una variabile comporta l'allocazione di un certo numero di bytes in memoria ma nulla sappiamo sul contenuto di tale area
+			Ipotizzeremo che il contenuto di una variabile appena dichiarata sia una sequenza casuale di bit
+			Per ogni variabile dichiarata viene allocata una quantità di memoria corrispondente al tipo
+			L'allocazione avviene in ordine di dichiarazione
+		L'assegnamento di un valore ad una variabile
+			Dichiarata una variabile, è possibile scrivere un valore in tale area di meoria assegnando un valore ad x con l'operatore di assegnamento =
+				int x;
+				x = 10;
+				left value e right value. Nell'asssegnamento nel left value ci può essere solo una variabile
+			Dichiarazione e assegnamento possono essere eseguiti sulla stessa linea
+				int x = 10;
+			L'assegnamento deve rispettare il tipo della variabile
+			Alcuni valori danno overflow non rileavili dal compilatore
+			Alcune espressioni potrebbero essere interpretate
+			"Il tuo sistema si sballa in qualche maniera... Nel senso informatico del termine" -A. Mazzei
+			Alcune espressioni potrebbero essere interpretare diversamente da come inteso dal programmatore a seconda del tipo
+			
+			<variabile> = <E>
+			left value (lvalue), operatore di assegnamento, right value (rvalue)
+			L'espressione <E> viene valutata
+			Se la valutazione termina con successo, si ottiene un valore che viene scritto nell'area del lvalue
+			Gli operatori * / % hanno la stessa massima precedenza, seguono + -
+			A parità di ordine di precedenza, ha priorità l'operatore a sinistra
+			Infine viene valutato l'operatore assegnazione =
+			Le parentesi tonde possono (devono!) essere usate per forzare l'ordine di valutazione e possono essere annidate su più livelli
